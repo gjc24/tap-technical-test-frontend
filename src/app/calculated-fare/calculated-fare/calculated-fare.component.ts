@@ -24,8 +24,8 @@ export class CalculatedFareComponent implements OnInit {
       }
     );
 
-    this.calculatedFareService.calculateFareByDriverId(this.driverId).subscribe((data: any)=>{
-      this.calculatedFares = data;
+    this.calculatedFareService.calculateFareByDriverId(this.driverId).subscribe(async (data: any)=>{
+      this.calculatedFares = await data;
     })
   }
 

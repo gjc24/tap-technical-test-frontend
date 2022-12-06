@@ -18,9 +18,9 @@ export class DriverProfileService {
     return this.httpClient.get<Driver>(`${this.REST_API_SERVER_URL}/driver-profile`)
   }
 
-  // public addDriver(driver: Driver): Observable<Driver> {
-  //   return this.httpClient.post<Driver>(`${this.REST_API_SERVER_URL}/driver-profile/`)
-  // }
+  public addDriver(driver: Driver): Observable<Driver> {
+    return this.httpClient.post<Driver>(`${this.REST_API_SERVER_URL}/driver-profile/`, driver)
+  }
 
   public deleteDriver(driverId: String) : Observable<Driver> {
     return this.httpClient.delete<Driver>(`${this.REST_API_SERVER_URL}/driver-profile/` + driverId)

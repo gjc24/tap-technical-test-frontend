@@ -1,9 +1,11 @@
 <div class="container">
   <div class="card mt-5">
-    <h5 class="card-header">Driver Profiles - List</h5>
+    <h5 class="card-header">Driver Profiles | List</h5>
     <div class="card-body">
       <div class="d-flex justify-content-end mb-3 mt-2">
-        <button class="btn btn-success">Add New Driver</button>
+        <button class="btn btn-success" (click)="goToRegisterDriver()">
+          Register New Driver
+        </button>
       </div>
       <div class="table-responsive">
         <table class="table table-hover">
@@ -35,14 +37,14 @@
                   class="btn btn-primary mr-3"
                   (click)="goToCalculate(driver.driverId)"
                 >
-                  Calculate Fares
+                <i class="fa-solid fa-calculator"></i>&nbsp;Calculate Fares
                 </button>
-                <button class="btn btn-warning mr-3">Edit</button>
+                <button class="btn btn-secondary mr-3"><i class="fa-solid fa-user-pen"></i></button>
                 <button
                   class="btn btn-danger"
                   (click)="deleteDriver(driver.driverId)"
                 >
-                  Delete
+                  <i class="fa-solid fa-trash-can"></i>
                 </button>
               </td>
             </tr>

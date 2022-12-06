@@ -1,1 +1,119 @@
-<p>create-driver-profile works!</p>
+<div class="container">
+  <div class="card mt-5">
+    <h5 class="card-header">Driver Profile | Register new driver</h5>
+    <div class="card-body">
+      <div class="d-flex justify-content-start mb-4 mt-2">
+        <button
+          *ngIf="!formSubmitted"
+          class="btn btn-primary"
+          (click)="backToList()"
+        >
+          Back to Driver Profile List
+        </button>
+      </div>
+      <div *ngIf="!formSubmitted">
+        <form>
+          <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input
+              type="text"
+              required
+              class="form-control"
+              id="name"
+              name="name"
+              aria-describedby="name"
+              [(ngModel)]="driver.name"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="surname" class="form-label">Surname</label>
+            <input
+              type="text"
+              required
+              class="form-control"
+              id="surname"
+              name="surname"
+              aria-describedby="surname"
+              [(ngModel)]="driver.surname"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input
+              type="email"
+              required
+              class="form-control"
+              id="email"
+              name="email"
+              aria-describedby="email"
+              [(ngModel)]="driver.email"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="vehicleType" class="form-label">Vehicle Type</label>
+            <input
+              type="text"
+              required
+              class="form-control"
+              id="vehicleType"
+              name="vehicleType"
+              aria-describedby="vehicleType"
+              [(ngModel)]="driver.vehicleType"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="baseFarePrice" class="form-label"
+              >Base Fare Price</label
+            >
+            <input
+              type="text"
+              required
+              class="form-control"
+              id="baseFarePrice"
+              name="baseFarePrice"
+              aria-describedby="baseFarePrice"
+              [(ngModel)]="driver.baseFarePrice"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="baseFareDistance" class="form-label"
+              >Base Fare Distance</label
+            >
+            <input
+              type="text"
+              required
+              class="form-control"
+              id="baseFareDistance"
+              name="baseFareDistance"
+              aria-describedby="baseFareDistance"
+              [(ngModel)]="driver.baseFareDistance"
+            />
+          </div>
+          <div class="d-flex justify-content-end">
+            <button type="submit" class="btn btn-primary" (click)="addDriver()">
+              REGISTER DRIVER
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <div *ngIf="formSubmitted">
+        <div class="alert alert-success mb-3" role="alert">
+          <b>Driver registered successfully</b>
+        </div>
+        <div class="d-flex justify-content-start">
+          <button
+            class="btn btn-primary"
+            (click)="backToList()"
+          >
+            Back to Driver Profile List
+          </button>
+          <h4>OR</h4>
+          <button class="btn btn-success" (click)="newDriver()">
+            Add New Driver
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

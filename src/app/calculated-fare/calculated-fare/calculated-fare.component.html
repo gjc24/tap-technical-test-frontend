@@ -1,10 +1,12 @@
 <div class="container">
   <div class="card mt-5">
-    <h5 class="card-header">Calculated Fares - Driver ID: {{ this.driverId }}</h5>
+    <h5 class="card-header">Calculated Fares | Driver ID: {{ this.driverId }}</h5>
     <div class="card-body">
-      <div class="d-flex justify-content-between mb-3 mt-2">
-        <button class="btn btn-primary" (click)="backToList()">Back to List</button>
-        <button class="btn btn-success">Add New Driver</button>
+      <div class="d-flex justify-content-start mb-2">
+        <button class="btn btn-primary" (click)="backToList()">Back to Driver Profile List</button>
+      </div>
+      <div class="alert alert-info mt-5" role="alert">
+        <b>CHEAPEST FARE</b> is always displayed on the <b>FIRST ROW.</b>
       </div>
       <table class="table table-hover">
         <thead class="table-light">
@@ -19,7 +21,8 @@
           <tr *ngFor="let calculatedFare of calculatedFares">
             <td>{{ calculatedFare.csvDistanceTraveled }}</td>
             <td>{{ calculatedFare.csvTravelUnit }}</td>
-            <td>{{ calculatedFare.csvCostPerDistanceTraveled }}</td>
+            <td *ngIf="calculatedFare.csvCostPerDistanceTraveled != '0'" >{{ calculatedFare.csvCostPerDistanceTraveled }}</td>
+            <td *ngIf="calculatedFare.csvCostPerDistanceTraveled == '0'" ><span class="badge bg-success">NO COST APPLIED</span></td>
             <td>
               <b>{{ calculatedFare.finalCalculatedCost }}</b>
             </td>

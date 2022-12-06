@@ -7,6 +7,8 @@ import { ListDriverProfileComponent } from './driver-profile/list-driver-profile
 import { CreateDriverProfileComponent } from './driver-profile/create-driver-profile/create-driver-profile.component';
 import { UpdateDriverProfileComponent } from './driver-profile/update-driver-profile/update-driver-profile.component';
 import { CalculatedFareComponent } from './calculated-fare/calculated-fare/calculated-fare.component';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { CalculatedFareComponent } from './calculated-fare/calculated-fare/calcu
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

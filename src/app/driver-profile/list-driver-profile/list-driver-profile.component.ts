@@ -16,15 +16,19 @@ export class ListDriverProfileComponent implements OnInit {
 
   ngOnInit(): void {
     this.driverProfileService.getDriverProfileList().subscribe((data: any)=>{
-      console.log(data);
       this.drivers = data;
     })
   }
 
   deleteDriver(id: any) {
-    this.driverProfileService.deleteDriver(id).subscribe(() => this.ngOnInit());
+    if(confirm("Are you sure to delete driver: " + id + "?")) {
+      this.driverProfileService.deleteDriver(id).subscribe(() => this.ngOnInit());
+    }
   }
 
+  goToRegisterDriver(){
+    this.router.navigate(['/register-driver']);
+}
 
   goToCalculate(id: any){
       this.router.navigate(['/calculate-fares'], { queryParams: { driverId: id } });
