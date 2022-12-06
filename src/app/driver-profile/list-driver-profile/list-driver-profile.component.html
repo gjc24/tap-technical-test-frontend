@@ -4,7 +4,7 @@
     <div class="card-body">
       <div class="d-flex justify-content-end mb-3 mt-2">
         <button class="btn btn-success" (click)="goToRegisterDriver()">
-          Register New Driver
+          <i class="fa-solid fa-plus"></i>&nbsp;&nbsp;Register New Driver
         </button>
       </div>
       <div class="table-responsive">
@@ -37,9 +37,11 @@
                   class="btn btn-primary mr-3"
                   (click)="goToCalculate(driver.driverId)"
                 >
-                <i class="fa-solid fa-calculator"></i>&nbsp;Calculate Fares
+                <i class="fa-solid fa-calculator"></i>&nbsp;&nbsp;Calculate Fares
                 </button>
-                <button class="btn btn-secondary mr-3"><i class="fa-solid fa-user-pen"></i></button>
+                <button class="btn btn-secondary mr-3" (click)="goToUpdateDriver(driver.driverId)">
+                  <i class="fa-solid fa-user-pen"></i>
+                </button>
                 <button
                   class="btn btn-danger"
                   (click)="deleteDriver(driver.driverId)"

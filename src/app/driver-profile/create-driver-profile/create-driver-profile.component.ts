@@ -37,12 +37,14 @@ export class CreateDriverProfileComponent implements OnInit {
       baseFareDistance: this.driver.baseFareDistance,
     };
 
-    this.driverProfileService.addDriver(formData).subscribe({
-      next: (response) => {
-        console.log(response);
-        this.formSubmitted = true;
-      },
-    });
+    if(formData.name && formData.surname && formData.email && formData.vehicleType && formData.baseFarePrice && formData.baseFareDistance){
+      this.driverProfileService.addDriver(formData).subscribe({
+        next: (response) => {
+          console.log(response);
+          this.formSubmitted = true;
+        },
+      });
+    }
   }
 
   newDriver(): void {

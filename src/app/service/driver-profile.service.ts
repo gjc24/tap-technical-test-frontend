@@ -18,8 +18,16 @@ export class DriverProfileService {
     return this.httpClient.get<Driver>(`${this.REST_API_SERVER_URL}/driver-profile`)
   }
 
+  public getDriverProfileById(driverId: String) : Observable<Driver> {
+    return this.httpClient.get<Driver>(`${this.REST_API_SERVER_URL}/driver-profile/` + driverId)
+  }
+
   public addDriver(driver: Driver): Observable<Driver> {
     return this.httpClient.post<Driver>(`${this.REST_API_SERVER_URL}/driver-profile/`, driver)
+  }
+
+  public updateDriver(driverId: String, driver: Driver) : Observable<Driver> {
+    return this.httpClient.put<Driver>(`${this.REST_API_SERVER_URL}/driver-profile/` + driverId, driver)
   }
 
   public deleteDriver(driverId: String) : Observable<Driver> {

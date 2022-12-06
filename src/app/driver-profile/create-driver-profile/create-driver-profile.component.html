@@ -8,7 +8,7 @@
           class="btn btn-primary"
           (click)="backToList()"
         >
-          Back to Driver Profile List
+        <i class="fa-solid fa-circle-chevron-left"></i>&nbsp;&nbsp;Back to Driver Profile List
         </button>
       </div>
       <div *ngIf="!formSubmitted">
@@ -91,7 +91,7 @@
           </div>
           <div class="d-flex justify-content-end">
             <button type="submit" class="btn btn-primary" (click)="addDriver()">
-              REGISTER DRIVER
+              <i class="fa-solid fa-plus"></i>&nbsp;&nbsp;REGISTER DRIVER
             </button>
           </div>
         </form>
@@ -99,18 +99,18 @@
 
       <div *ngIf="formSubmitted">
         <div class="alert alert-success mb-3" role="alert">
-          <b>Driver registered successfully</b>
+          <b>Driver registered successfully!</b>
         </div>
-        <div class="d-flex justify-content-start">
+        <div class="d-flex justify-content-start justify-align-center">
           <button
             class="btn btn-primary"
             (click)="backToList()"
           >
-            Back to Driver Profile List
+          <i class="fa-solid fa-circle-chevron-left"></i>&nbsp;&nbsp;Back to Driver Profile List
           </button>
-          <h4>OR</h4>
+          <h5 class="pt-2">&nbsp;OR&nbsp;</h5>
           <button class="btn btn-success" (click)="newDriver()">
-            Add New Driver
+            <i class="fa-solid fa-plus"></i>&nbsp;&nbsp;Register New Driver
           </button>
         </div>
       </div>
