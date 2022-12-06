@@ -20,6 +20,7 @@ export class UpdateDriverProfileComponent implements OnInit {
   };
 
   driverId: String = '';
+  completeRequiredInput = true;
   formSubmitted = false;
 
   constructor(
@@ -65,6 +66,9 @@ export class UpdateDriverProfileComponent implements OnInit {
           this.formSubmitted = true;
         },
       });
+    }
+    else {
+      this.completeRequiredInput = false;
     }
   }
 

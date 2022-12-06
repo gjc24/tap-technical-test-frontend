@@ -11,10 +11,15 @@
         <i class="fa-solid fa-circle-chevron-left"></i>&nbsp;&nbsp;Back to Driver Profile List
         </button>
       </div>
+      <div *ngIf="!completeRequiredInput">
+        <div class="alert alert-danger mb-3" role="alert">
+          <b>Please complete all required fields!</b>
+        </div>
+      </div>
       <div *ngIf="!formSubmitted">
         <form>
           <div class="mb-3">
-            <label for="name" class="form-label">Name</label>
+            <label for="name" class="form-label">Name (Required)</label>
             <input
               type="text"
               required
@@ -26,7 +31,7 @@
             />
           </div>
           <div class="mb-3">
-            <label for="surname" class="form-label">Surname</label>
+            <label for="surname" class="form-label">Surname (Required)</label>
             <input
               type="text"
               required
@@ -38,7 +43,7 @@
             />
           </div>
           <div class="mb-3">
-            <label for="email" class="form-label">Email</label>
+            <label for="email" class="form-label">Email (Required)</label>
             <input
               type="email"
               required
@@ -50,7 +55,9 @@
             />
           </div>
           <div class="mb-3">
-            <label for="vehicleType" class="form-label">Vehicle Type</label>
+            <label for="vehicleType" class="form-label"
+              >Vehicle Type (Required)</label
+            >
             <input
               type="text"
               required
@@ -61,10 +68,12 @@
               [(ngModel)]="driver.vehicleType"
             />
           </div>
-          <div class="mb-3">
-            <label for="baseFarePrice" class="form-label"
-              >Base Fare Price</label
-            >
+
+          <label for="baseFarePrice" class="form-label"
+            >Base Fare Price (Required)</label
+          >
+          <div class="input-group mb-3">
+            <span class="input-group-text">¥</span>
             <input
               type="text"
               required
@@ -75,10 +84,10 @@
               [(ngModel)]="driver.baseFarePrice"
             />
           </div>
-          <div class="mb-3">
-            <label for="baseFareDistance" class="form-label"
-              >Base Fare Distance</label
-            >
+          <label for="baseFareDistance" class="form-label"
+            >Base Fare Distance (Required)</label
+          >
+          <div class="input-group mb-3">
             <input
               type="text"
               required
@@ -88,6 +97,7 @@
               aria-describedby="baseFareDistance"
               [(ngModel)]="driver.baseFareDistance"
             />
+            <span class="input-group-text">KM</span>
           </div>
           <div class="d-flex justify-content-end">
             <button type="submit" class="btn btn-primary" (click)="updateDriver(this.driverId)">

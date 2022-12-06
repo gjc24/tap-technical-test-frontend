@@ -18,6 +18,7 @@ export class CreateDriverProfileComponent implements OnInit {
     baseFareDistance: '',
   };
 
+  completeRequiredInput = true;
   formSubmitted = false;
 
   constructor(
@@ -43,6 +44,8 @@ export class CreateDriverProfileComponent implements OnInit {
           this.formSubmitted = true;
         },
       });
+    } else {
+      this.completeRequiredInput = false;
     }
   }
 
