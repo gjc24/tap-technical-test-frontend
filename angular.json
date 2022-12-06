@@ -71,7 +71,8 @@
               "browserTarget": "tap-technical-test-frontend:build:production"
             },
             "development": {
-              "browserTarget": "tap-technical-test-frontend:build:development"
+              "browserTarget": "tap-technical-test-frontend:build:development",
+              "proxyConfig": "src/proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"

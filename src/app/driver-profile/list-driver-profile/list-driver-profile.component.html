@@ -1,0 +1,54 @@
+<div class="container">
+  <div class="card mt-5">
+    <h5 class="card-header">Driver Profiles - List</h5>
+    <div class="card-body">
+      <div class="d-flex justify-content-end mb-3 mt-2">
+        <button class="btn btn-success">Add New Driver</button>
+      </div>
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <thead class="table-light">
+            <tr>
+              <th>Driver ID</th>
+              <th>Name</th>
+              <th>Surname</th>
+              <th>Email</th>
+              <th>Vehicle Type</th>
+              <th>Base Fare Price</th>
+              <th>Base Fare Distance</th>
+              <th>Options</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let driver of drivers">
+              <td>
+                <b>{{ driver.driverId }}</b>
+              </td>
+              <td>{{ driver.name }}</td>
+              <td>{{ driver.surname }}</td>
+              <td>{{ driver.email }}</td>
+              <td>{{ driver.vehicleType }}</td>
+              <td>{{ driver.baseFarePrice }}</td>
+              <td>{{ driver.baseFareDistance }}</td>
+              <td class="d-flex justify-content-evenly">
+                <button
+                  class="btn btn-primary mr-3"
+                  (click)="goToCalculate(driver.driverId)"
+                >
+                  Calculate Fares
+                </button>
+                <button class="btn btn-warning mr-3">Edit</button>
+                <button
+                  class="btn btn-danger"
+                  (click)="deleteDriver(driver.driverId)"
+                >
+                  Delete
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
