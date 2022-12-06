@@ -62,7 +62,6 @@ export class UpdateDriverProfileComponent implements OnInit {
     if(formData.name && formData.surname && formData.email && formData.vehicleType && formData.baseFarePrice && formData.baseFareDistance){
       this.driverProfileService.updateDriver(id, formData).subscribe({
         next: (response) => {
-          console.log(response);
           this.formSubmitted = true;
         },
       });
